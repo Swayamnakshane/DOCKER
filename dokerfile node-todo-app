@@ -1,0 +1,20 @@
+#baseimage
+
+from node:12.2.0-alpine
+
+#workdirtory
+
+workdir /node
+
+#copy
+
+copy . .
+
+#run
+
+run npm install
+run npm run test
+expose 8000
+
+cmd ["node","app.js","0.0.0.0:8000"]
+~
